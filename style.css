@@ -367,6 +367,9 @@ select {
   .produtos div:nth-child(odd) {
     text-align: right;
   }
+  .produtos div:nth-child(odd) img {
+    grid-column: 2;
+  }
   .produtos h2 {
     text-align: left;
     line-height: 1.3;

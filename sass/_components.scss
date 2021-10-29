@@ -257,6 +257,10 @@
 
     div:nth-child(odd) {
       text-align: right;
+
+      img {
+        grid-column: 2;
+      }
     }
 
     h2 {

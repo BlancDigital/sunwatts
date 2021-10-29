@@ -50,7 +50,7 @@
     text-align: center;
   }
 
-  .fancy-divider {
+  img {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -60,12 +60,26 @@
   }
 }
 
+.section-produtos {
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .btn--cta {
+    margin-top: 4rem;
+  }
+}
+
 .section-diferenciais {
   h2 {
     color: var(--clr-white);
   }
 
   background: var(--clr-blue-100);
+
+  .btn--cta {
+    margin-top: 4rem;
+  }
 }
 
 .section-dados {
@@ -77,11 +91,31 @@
 .section-cards.section-cards {
   padding: 11vh 0;
 
-  > h2 {
+  .title {
     text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .btn--cta {
+    margin-top: 4rem;
+  }
+}
+
+.section-faq {
+  .btn--cta {
+    margin-top: -4rem;
+    margin-bottom: 4rem;
   }
 }
 
 .fancy-divider {
   display: flex;
+}
+
+@media screen and (min-width: 62.5rem) {
+  .section-hero {
+    video {
+      width: 100%;
+    }
+  }
 }

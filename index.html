@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Sunwatts - Energia Solar</title>
 
     <!-- title -->
-    <meta property="og:title" content="Sunwatts –Energia Solar" />
+    <meta property="og:title" content="Sunwatts – Energia Solar" />
 
     <!-- description -->
     <meta
@@ -26,8 +25,10 @@
 
     <!-- misc -->
     <meta property="og:locale" content="pt_BR" />
-    <meta name="theme-color" content="#a52a2a" />
+    <meta name="theme-color" content="#ff9c00" />
 
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/simulator.css" />
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,17 +36,30 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500&family=Roboto:wght@300;500;900&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="./style.css" />
     <link
       rel="preload"
       href="./libs/accordions/accordion.min.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
-    <title>Sunwatts –Energia Solar</title>
+    <link
+      rel="preload"
+      href="./style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <script defer src="./simulator.js"></script>
+    <script async src="./main.js"></script>
   </head>
+
   <body>
+    <div class="exit-form__trigger" id="exitFormTrigger"></div>
+    <div
+      class="exit-form__trigger-activator"
+      id="exitFormTriggerActivator"
+    ></div>
+
     <!-- #SECTION HERO -->
     <section class="section-hero">
       <video
@@ -72,38 +86,24 @@
       <img src="./public/images/hero-bar.png" alt="" />
     </section>
 
-    <div class="fancy-divider">
-      <svg
-        preserveAspectRatio="none"
-        viewBox="0 0 100 100"
-        height="100"
-        width="100%"
-        version="1.1"
-        xmlns="https://www.w3.org/2000/svg"
-        style="background: #fff"
-      >
-        <path
-          d="M0 0 C 50 100 80 100 100 0 Z"
-          style="fill: #ffffff; stroke: #ffffff"
-        ></path>
-      </svg>
-    </div>
-
     <!-- #SECTION SIMULATION -->
-    <section class="section-simulation"></section>
-
-    <div class="section-center">
+    <section id="simulator" class="section-simulation section-center">
+      <h2 class="title">Faça sua simulação</h2>
+      <div class="simulator"></div>
       <button class="btn btn--cta">Continue sua simulação personalizada</button>
-    </div>
+    </section>
 
     <!-- #SECTION PRODUTOS -->
     <section class="section-produtos">
       <div class="section-center">
-        <h2 class="title">CONHEÇA NOSSOS SERVIÇOS</h2>
+        <h2 class="title">Conheça nossos serviços</h2>
         <div class="produtos">
           <!-- start of produto item -->
           <div class="produto">
-            <img src="./public/images/residencial.png" alt="" />
+            <img
+              src="./public/images/residencial.png"
+              alt="Casa residêncial com paineis solares instalados"
+            />
             <div class="produto__text">
               <h2>RESIDENCIAL</h2>
               <p>
@@ -111,13 +111,18 @@
                 energia fotovoltaica, para garantir uma relativa autonomia em
                 sua energia elétrica.
               </p>
-              <button class="btn">Simule</button>
+              <button class="btn" onclick="window.location.href='#simulator';">
+                Simule
+              </button>
             </div>
           </div>
           <!-- end of produto item -->
           <!-- start of produto item -->
           <div class="produto">
-            <img src="./public/images/industrial.png" alt="" />
+            <img
+              src="./public/images/industrial.png"
+              alt="Torres de energia sendo alimentadas por paineis solares"
+            />
             <div class="produto__text">
               <h2>COMERCIAL</h2>
               <p>
@@ -126,25 +131,34 @@
                 instalação de painéis ou placas em locais adequados como
                 telhados, coberturas ou em campo aberto.
               </p>
-              <button class="btn">Simule</button>
+              <button class="btn" onclick="window.location.href='#simulator';">
+                Simule
+              </button>
             </div>
           </div>
           <!-- end of produto item -->
           <!-- start of produto item -->
           <div class="produto">
-            <img src="./public/images/rural.png" alt="" />
+            <img
+              src="./public/images/rural.png"
+              alt="Casa rural sendo suprida por paineis solares"
+            />
             <div class="produto__text">
               <h2>RURAL</h2>
               <p>
-                Além da geração de energiaos produtores rurais podem utilizar de
-                diferentes formas, algumas como:
+                Além da geração de energia os produtores rurais podem utilizar
+                de diferentes formas, algumas como:
               </p>
-              <button class="btn">Simule</button>
+              <button class="btn" onclick="window.location.href='#simulator';">
+                Simule
+              </button>
             </div>
           </div>
           <!-- end of produto item -->
         </div>
-        <button class="btn btn--cta">Faça sua simulação</button>
+        <button class="btn center" onclick="window.location.href='#simulator';">
+          Faça sua simulação
+        </button>
       </div>
     </section>
 
@@ -247,7 +261,9 @@
           <!-- end of diferencial item -->
         </div>
 
-        <button class="btn btn--cta">Faça sua simulação</button>
+        <button class="btn center" onclick="window.location.href='#simulator';">
+          Faça sua simulação
+        </button>
       </div>
     </section>
     <div class="fancy-divider">
@@ -332,7 +348,9 @@
           </div>
         </div>
 
-        <button class="btn btn--cta">Faça sua simulação</button>
+        <button class="btn center" onclick="window.location.href='#simulator';">
+          Faça sua simulação
+        </button>
       </div>
     </section>
 
@@ -358,22 +376,22 @@
         <div class="dados">
           <!-- start of dado item -->
           <div class="dado">
-            <img src="./public/images/paineisInstalados.png" alt="" />
-            <p class="number">1258</p>
+            <img src="./public/images/installed-panels.png" alt="" />
+            <p id="countup-1" class="number">1258</p>
             <p class="desc">painéis instalados</p>
           </div>
           <!-- end of dado item -->
           <!-- start of dado item -->
           <div class="dado">
-            <img src="./public/images/potenciaEnergetica.png" alt="" />
-            <p class="number">343<span>KWp</span></p>
+            <img src="./public/images/energetic-potential.png" alt="" />
+            <p id="countup-2" class="number">343<span>KWp</span></p>
             <p class="desc">potência energética</p>
           </div>
           <!-- end of dado item -->
           <!-- start of dado item -->
           <div class="dado">
             <img src="./public/images/done-projects.png" alt="" />
-            <p class="number">155</p>
+            <p id="countup-3" class="number">155</p>
             <p class="desc">projetos concluídos</p>
           </div>
           <!-- end of dado item -->
@@ -399,7 +417,9 @@
 
     <!-- SECTION-FAQ -->
     <section class="section-faq section-center">
-      <button class="btn btn--cta">Faça sua simulação</button>
+      <button class="btn center" onclick="window.location.href='#simulator';">
+        Faça sua simulação
+      </button>
 
       <h2>dúvidas frequentes</h2>
 
@@ -510,7 +530,210 @@
       </div>
     </section>
 
-    <script src="./libs/accordions/accordion.min.js" async defer></script>
+    <div class="modal modal--main-form is-hidden" id="modal">
+      <div class="modal__image-wrapper">
+        <img src="./public/images/residencial.png" alt="" />
+      </div>
+
+      <form
+        method="post"
+        action="enviar.php"
+        id="enviar"
+        name="enviar"
+        class="form"
+        autocomplete="off"
+        onsubmit="return validateForm(e)"
+      >
+        <div class="wrapper">
+          <button class="btn btn--full btn--close" type="button">
+            &times;
+          </button>
+
+          <h6>Estamos quase lá!</h6>
+          <p>
+            Para nossa equipe entender melhor seu caso e fornecer o<b>
+              melhor atendimento possível </b
+            >, precisamos de algumas informações básicas
+          </p>
+          <p id="alertForm" class="alert is-hidden">
+            Preencha todos os campos corretamente!
+          </p>
+          <!-- FORM__NAME -->
+          <div class="form__field-wrapper">
+            <label class="" for="name-form">Nome*</label>
+            <input
+              type="text"
+              name="name-form"
+              id="nameForm"
+              placeholder="Seu nome aqui"
+              autocomplete="off"
+              oninput="validateName(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__CELLPHONE -->
+          <div class="form__field-wrapper">
+            <label class="" for="cellphone-form">Número de celular*</label>
+            <input
+              type="tel"
+              name="cellphone-form"
+              id="cellphoneForm"
+              placeholder="Seu número aqui"
+              title="Seu número de celular com o código de área"
+              oninput="validateNumber(this)"
+              onkeypress="mascara(this)"
+              maxlength="15"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__EMAIL -->
+          <div class="form__field-wrapper">
+            <label for="email-form">Seu melhor e-mail para contato*</label>
+            <input
+              type="email"
+              name="email-form"
+              id="emailForm"
+              placeholder="email@exemplo.com"
+              oninput="validateEmail(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__GASTO -->
+          <div class="form__field-wrapper">
+            <label for="gasto-form"
+              >Média de gasto mensal com energia (R$)*</label
+            >
+            <input
+              type="number"
+              name="gasto-form"
+              id="gastoForm"
+              placeholder="100"
+              required
+            />
+          </div>
+
+          <button
+            class="btn btn--full btn--submit"
+            name="submit-btn"
+            formaction="enviar.php"
+            type="submit"
+            id="enviar"
+          >
+            Peça a simulação personalizada!
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- EXIT FORM -->
+    <div class="modal modal--exit-form is-hidden" id="modal">
+      <div class="modal__image-wrapper">
+        <img src="./public/images/residencial.png" alt="" />
+      </div>
+
+      <form
+        method="post"
+        id="exitForm"
+        name="envia"
+        class="form form--exit"
+        autocomplete="off"
+      >
+        <div class="wrapper">
+          <button
+            class="btn btn--full btn--close btn--close-exit"
+            type="button"
+          >
+            &times;
+          </button>
+
+          <h6>Menor preço, a melhor qualidade!</h6>
+          <p>
+            Oferecemos <b>qualidade</b> e <b>preço justo</b>. Tem certeza de que
+            quer deixar essa oportunidade passar?
+          </p>
+          <p id="alertForm" class="alert is-hidden">
+            Preencha todos os campos corretamente!
+          </p>
+          <!-- FORM__NAME -->
+          <div class="form__field-wrapper">
+            <label class="" for="name-form">Nome*</label>
+            <input
+              type="text"
+              name="name-form"
+              id="nameForm"
+              placeholder="Seu nome aqui"
+              autocomplete="off"
+              oninput="validateName(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__CELLPHONE -->
+          <div class="form__field-wrapper">
+            <label class="" for="cellphone-form">Número de celular*</label>
+            <input
+              type="tel"
+              name="cellphone-form"
+              id="cellphoneForm"
+              placeholder="Seu número aqui"
+              title="Seu número de celular com o código de área"
+              onkeypress="mascara(this)"
+              oninput="validateNumber(this)"
+              maxlength="15"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <!-- FORM__EMAIL -->
+          <div class="form__field-wrapper">
+            <label for="email-form">Seu melhor e-mail para contato*</label>
+            <input
+              type="email"
+              name="email-form"
+              id="emailForm"
+              placeholder="email@exemplo.com"
+              oninput="validateEmail(this)"
+              required
+            />
+          </div>
+
+          <!-- FORM__GASTO -->
+          <div class="form__field-wrapper">
+            <label for="gasto-form"
+              >Média de gasto mensal com energia (R$)*</label
+            >
+            <input
+              type="number"
+              name="gasto-form"
+              id="gastoForm-exit"
+              placeholder="100"
+              required
+            />
+          </div>
+
+          <button
+            class="btn btn--full btn--submit"
+            name="submit-btn"
+            formaction="enviar.php"
+            type="submit"
+            id="enviar"
+          >
+            Peça o atendimento personalizado!
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="./libs/accordions/accordion.min.js"
+      defer
+      type="text/javascript"
+    ></script>
 
     <script type="module">
       import "./libs/accordions/accordion.min.js"

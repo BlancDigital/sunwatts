@@ -154,9 +154,9 @@ form.addEventListener(
       // })
 
       // Event snippet for Envio de formulário conversion page
-      //   gtag("event", "conversion", {
-      //     send_to: "AW-302885338/DhUICMHkyvMCENrTtpAB",
-      //   })
+      gtag("event", "conversion", {
+        send_to: "AW-336630608/NBHVCLLy59QCENCmwqAB",
+      })
       return true
     } else {
       e.preventDefault()

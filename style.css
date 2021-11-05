@@ -146,6 +146,10 @@ select {
   font-size: var(--fs-md);
 }
 
+.center {
+  margin: 0 auto;
+}
+
 @-webkit-keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -346,6 +350,8 @@ select {
 }
 .cards .card {
   position: relative;
+  -webkit-animation: pulse-blue 4s infinite;
+  animation: pulse-blue 4s infinite;
 }
 .cards .card__back-image {
   position: absolute;
@@ -499,109 +505,6 @@ select {
     grid-auto-rows: 10.625rem 4rem 1fr 1fr;
   }
 }
-.section-hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  color: white;
-}
-.section-hero h1 {
-  max-width: 20ch;
-  font-size: var(--fs-xxlg);
-  color: var(--clr-white);
-  line-height: 1.2;
-}
-.section-hero p {
-  max-width: 60ch;
-  font-size: var(--fs-md);
-  font-weight: 300;
-}
-.section-hero video {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.section-hero .section-center {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-.section-hero .background::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  content: "";
-  background-color: #000;
-  opacity: 0.5;
-}
-.section-hero .section-hero__text {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-}
-.section-hero img {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 15%;
-  z-index: 10;
-}
-
-.section-simulation .btn {
-  background: var(--clr-blue-100);
-  color: var(--clr-white);
-}
-
-.section-produtos .title {
-  margin-bottom: 2rem;
-}
-.section-produtos .center {
-  margin-top: 4rem;
-}
-
-.section-diferenciais {
-  background: var(--clr-blue-100);
-}
-.section-diferenciais h2 {
-  color: var(--clr-white);
-}
-.section-diferenciais .center {
-  margin-top: 4rem;
-}
-
-.section-dados {
-  padding-block: 11vh 0;
-  color: var(--clr-blue-200);
-  background-color: var(--clr-yellow-200);
-}
-
-.section-cards.section-cards {
-  padding: 11vh 0;
-}
-.section-cards.section-cards .title {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.section-cards.section-cards .center {
-  margin-top: 4rem;
-}
-
-.section-faq .btn--cta {
-  margin-top: -4rem;
-  margin-bottom: 4rem;
-}
-
-.fancy-divider {
-  display: flex;
-}
-
 .exit-form__trigger {
   position: fixed;
   top: 0;
@@ -661,6 +564,7 @@ select {
   align-items: center;
   height: 90%;
 }
+
 .form .wrapper {
   position: relative;
   width: 90%;
@@ -785,35 +689,141 @@ select,
 .form--exit {
   color: #fff;
 }
+
 .form--exit .wrapper {
   background-color: #d21b1b;
 }
+
 .form--exit h6 {
   font-weight: 800;
   color: var(--clr-white);
   text-align: center;
   text-transform: uppercase;
 }
+
 .form--exit p {
   font-weight: 600;
   text-align: center;
 }
+
 .form--exit input {
   color: var(--clr-black);
   background-color: var(--clr-white);
 }
+
 .form--exit .btn {
   color: var(--clr-white);
   background-color: #5e1717;
   border: 0;
 }
 
-.is-hidden {
-  display: none;
+.section-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+.section-hero .logo {
+  max-width: 150px;
+}
+.section-hero h1 {
+  max-width: 20ch;
+  font-size: var(--fs-xxlg);
+  color: var(--clr-white);
+  line-height: 1.2;
+}
+.section-hero p {
+  max-width: 60ch;
+  font-size: var(--fs-md);
+  font-weight: 300;
+}
+.section-hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.section-hero .section-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-top: 5vh;
+}
+.section-hero .background::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #000;
+  opacity: 0.5;
+}
+.section-hero .section-hero__text {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+.section-hero .fancy-waves {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  z-index: 10;
 }
 
-.center {
-  margin: 0 auto;
+.section-simulation .btn {
+  background: var(--clr-blue-100);
+  color: var(--clr-white);
+  -webkit-animation: pulse-blue 2s infinite;
+  animation: pulse-blue 2s infinite;
+}
+
+.section-produtos .title {
+  margin-bottom: 2rem;
+}
+.section-produtos .btn {
+  margin-top: 4rem;
+}
+
+.section-diferenciais {
+  background: var(--clr-blue-100);
+}
+.section-diferenciais h2 {
+  color: var(--clr-white);
+}
+.section-diferenciais .btn {
+  margin-top: 4rem;
+}
+
+.section-dados {
+  padding-block: 11vh 0;
+  color: var(--clr-blue-200);
+  background-color: var(--clr-yellow-200);
+}
+
+.section-cards.section-cards {
+  padding: 11vh 0;
+}
+.section-cards.section-cards .title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.section-cards.section-cards .btn {
+  margin-top: 4rem;
+}
+
+.section-faq .btn {
+  margin-top: -4rem;
+  margin-bottom: 4rem;
+}
+
+.fancy-divider {
+  display: flex;
 }
 
 @media screen and (min-width: 62.5rem) {
@@ -821,5 +831,6 @@ select,
     width: 100%;
   }
 }
-
-/*# sourceMappingURL=to.css.map */
+.is-hidden {
+  display: none;
+}

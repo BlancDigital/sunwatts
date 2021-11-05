@@ -747,9 +747,8 @@ select,
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
-  padding-top: 5vh;
+  justify-content: center;
+  height: calc(100vh - 100px);
 }
 .section-hero .background::before {
   position: absolute;
@@ -776,6 +775,9 @@ select,
   z-index: 10;
 }
 
+.section-simulation .economia-text.svelte-1sl3wfq.svelte-1sl3wfq {
+  margin-bottom: -0.5rem;
+}
 .section-simulation .btn {
   background: var(--clr-blue-100);
   color: var(--clr-white);
@@ -826,7 +828,17 @@ select,
   display: flex;
 }
 
-@media screen and (min-width: 62.5rem) {
+@media screen and (min-width: 75rem) {
+  .section-hero .section-center {
+    padding-top: 5vh;
+    justify-content: flex-start;
+  }
+
+  .section-simulation .economia-text.svelte-1sl3wfq.svelte-1sl3wfq {
+    margin-bottom: -1rem;
+  }
+}
+@media screen and (min-width: 87.5rem) {
   .section-hero video {
     width: 100%;
   }
